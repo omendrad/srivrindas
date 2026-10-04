@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+*{box-sizing:border-box}
+
+@page{size:8in 10in;margin:0}
+
+:root{
+  --saffron:#e76a12;
+  --saffron-dark:#a83c0b;
+  --green:#245a3b;
+  --green-dark:#123d2a;
+  --gold:#c79538;
+  --cream:#fffaf0;
+  --ink:#28231e;
+  --muted:#756b5e;
+}
+
+html,body{margin:0;padding:0;background:#d8d2c8}
+body{
+  font-family:'DM Sans',Arial,sans-serif;
+  color:var(--ink);
+  -webkit-print-color-adjust:exact;
+  print-color-adjust:exact;
+}
+
+.page{
+  position:relative;width:8in;height:10in;margin:20px auto;overflow:hidden;
+  background:var(--cream);page-break-after:always;isolation:isolate;
+  box-shadow:0 18px 50px rgba(46,35,20,.18);
+}
+.page:last-child{page-break-after:auto}
+
+/* ===== COVER ===== */
+.cover-page{background:#f8f2e7}
+.cover-page:before{
+  content:"";position:absolute;inset:0;z-index:0;
+  background:
+    radial-gradient(circle at 18% 12%,rgba(231,106,18,.10),transparent 27%),
+    radial-gradient(circle at 72% 92%,rgba(36,90,59,.12),transparent 30%);
+}
+.cover-left{
+  position:absolute;inset:0 auto 0 0;width:54%;z-index:5;
+  padding:.28in .38in .25in .40in;
+}
+.cover-logo{
+  display:block;width:2.48in;height:2.48in;object-fit:contain;
+  margin:.02in auto -.02in;
+  filter:drop-shadow(0 7px 7px rgba(62,42,15,.16));
+}
+.ornament{margin:-.04in auto .08in;width:2.2in;text-align:center;color:var(--gold);font-size:15px;letter-spacing:6px}
+.cover-kicker{
+  margin:.04in 0 .08in .04in;color:var(--gold);font-family:'DM Sans',Arial,sans-serif;
+  font-size:.13in;line-height:1;letter-spacing:3px;text-transform:uppercase;font-weight:700;
+}
+.cover-left h1{
+  margin:0;color:var(--green-dark);
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-size:.52in;line-height:.90;letter-spacing:-.8px;font-weight:700;
+  text-shadow:0 2px 0 rgba(255,255,255,.55);
+}
+.cover-left h1 .accent{color:var(--saffron-dark);font-style:italic;font-weight:600}
+.cover-left h1 br{line-height:.7}
+.tagline{
+  margin:.14in 0 0 .04in;color:#5d4633;font-family:'Cormorant Garamond',Georgia,serif;
+  font-size:.25in;line-height:1.08;font-weight:600;font-style:italic;
+}
+.cover-rule{width:1.75in;height:1px;margin:.14in 0 0 .04in;background:linear-gradient(90deg,var(--gold),transparent);position:relative}
+.cover-rule:after{content:'✦';position:absolute;left:.69in;top:-.11in;color:var(--gold);font-size:.12in}
+.book-btn{
+  width:2.12in;height:.55in;border-radius:999px;margin:.24in 0 0 .03in;
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;background:linear-gradient(135deg,var(--saffron),#bd4609);
+  box-shadow:0 10px 22px rgba(182,70,9,.23);
+  font-size:.20in;font-weight:700;letter-spacing:.5px;
+  border:1px solid rgba(255,255,255,.55);outline:1px solid rgba(199,149,56,.6);outline-offset:3px;
+}
+.contact{margin:.28in 0 0 .04in;color:#4e443a;font-size:.145in;line-height:1.65;font-weight:600}
+.contact div{display:flex;align-items:center;gap:.08in}
+.contact-icon{
+  display:inline-flex;width:.22in;height:.22in;border-radius:50%;background:var(--green);color:white;
+  align-items:center;justify-content:center;font-size:9px;flex:0 0 auto;box-shadow:0 2px 7px rgba(36,90,59,.2)
+}
+.cover-food-badge{
+  position:absolute;left:3.55in;bottom:.16in;width:1.10in;height:1.10in;
+  border-radius:50%;padding:5px;background:linear-gradient(145deg,#fffdf7,#d4aa54);
+  box-shadow:0 12px 24px rgba(69,48,19,.20),0 0 0 1px rgba(199,149,56,.45);
+  z-index:10;
+}
+.cover-food-badge:before{
+  content:"";position:absolute;inset:-.08in;border:1px solid rgba(199,149,56,.48);
+  border-radius:50%;z-index:-1;
+}
+.cover-food-badge img{width:100%;height:100%;display:block;object-fit:cover;border-radius:50%;}
+
+.cover-photo{
+  position:absolute;top:.22in;right:.22in;width:47%;height:95%;overflow:hidden;z-index:1;
+  border-radius:1.2in 1.2in .35in .35in;
+  box-shadow:0 18px 35px rgba(53,38,19,.24);
+}
+.cover-photo:after{
+  content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(25,55,38,.03),rgba(15,25,18,.20));pointer-events:none
+}
+.cover-photo img{width:100%;height:100%;object-fit:cover;object-position:center center;display:block;image-rendering:auto}
+.orange-swoosh{display:none}
+
+/* ===== MENU PAGES ===== */
+.menu-page{background:var(--cream)}
+.menu-page:before{
+  content:"";position:absolute;inset:0;z-index:0;opacity:.55;
+  background-image:radial-gradient(rgba(199,149,56,.12) .7px,transparent .7px);background-size:13px 13px;
+}
+.orange-header{
+  position:absolute;top:0;left:0;width:100%;height:1.72in;z-index:1;text-align:left;color:white;
+  padding:.30in .38in 0;
+  background:linear-gradient(120deg,var(--green-dark) 0%,var(--green) 57%,#36714e 100%);
+  overflow:hidden;
+  border-bottom:4px solid var(--gold);
+}
+.orange-header:before{
+  content:"";position:absolute;right:-.55in;top:-1.05in;width:3.1in;height:3.1in;border:1px solid rgba(255,255,255,.18);border-radius:50%;
+  box-shadow:0 0 0 .16in rgba(255,255,255,.04),0 0 0 .32in rgba(255,255,255,.025)
+}
+.orange-header:after{
+  content:"SRI VRINDA'S";position:absolute;right:.35in;bottom:.18in;font-family:'Cormorant Garamond',Georgia,serif;font-size:.20in;letter-spacing:2px;color:rgba(255,255,255,.70)
+}
+.orange-header h2{
+  margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-size:.46in;line-height:1;font-weight:700;letter-spacing:.4px;
+  text-shadow:0 2px 8px rgba(0,0,0,.16)
+}
+.orange-header p{margin:.10in 0 0;font-size:.14in;font-weight:500;letter-spacing:.7px;color:#f9e8cf}
+.menu-content{
+  position:absolute;z-index:2;top:1.91in;left:.28in;right:.28in;bottom:.24in;
+  padding:.12in .25in .14in .18in;
+  background:rgba(255,252,244,.92);
+  border:1px solid rgba(199,149,56,.38);
+  border-radius:.20in;
+  box-shadow:0 10px 25px rgba(76,58,32,.08),inset 0 0 0 1px rgba(255,255,255,.7);
+}
+.menu-content:before{
+  content:"";position:absolute;left:-.12in;top:.24in;bottom:.24in;width:3px;background:linear-gradient(var(--saffron),var(--gold),var(--green));border-radius:99px
+}
+.menu-content ul{margin:0;padding:0 0 0 .12in;width:100%;list-style:none}
+.menu-content li{
+  position:relative;padding:0 1.28in 0 .22in;margin:0 0 .055in;
+  font-size:.178in;line-height:1.14;font-weight:600;color:#2c2924;
+}
+.menu-content li:before{
+  content:"";position:absolute;left:0;top:.08em;width:.095in;height:.095in;border-radius:50%;background:var(--saffron);
+  box-shadow:0 0 0 2px rgba(231,106,18,.12)
+}
+.menu-content li::after{content:"";position:absolute;left:.13in;right:1.28in;bottom:-.027in;border-bottom:1px dotted rgba(199,149,56,.20)}
+.menu-logo{
+  position:absolute;right:.16in;top:.12in;width:1.03in;height:1.03in;object-fit:contain;
+  background:rgba(255,255,255,.88);border-radius:50%;padding:.07in;
+  box-shadow:0 6px 16px rgba(47,35,19,.13);border:2px solid rgba(199,149,56,.62)
+}
+.menu-two{top:1.91in}
+.menu-two li{margin-bottom:.037in;font-size:.168in}
+.menu-three{top:1.87in}
+.menu-three li{margin-bottom:.026in;font-size:.157in}
+
+
+/* ===== MENU WHATSAPP CTAs ===== */
+.menu-content{padding-bottom:.70in}
+.menu-cta{
+  position:absolute;left:.18in;right:.18in;bottom:.13in;
+  display:grid;grid-template-columns:1fr 1fr;gap:.12in;
+  z-index:4;
+}
+.cta-btn{
+  min-height:.52in;border-radius:.13in;text-decoration:none;
+  display:flex;align-items:center;gap:.10in;padding:.07in .12in;
+  transition:transform .18s ease,box-shadow .18s ease;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact;
+}
+.cta-btn:hover{transform:translateY(-2px)}
+.cta-icon{
+  width:.28in;height:.28in;border-radius:50%;flex:0 0 .28in;
+  display:flex;align-items:center;justify-content:center;
+  font-size:.13in;font-weight:800;
+}
+.cta-btn strong{display:block;font-family:'DM Sans',Arial,sans-serif;font-size:.145in;line-height:1.05;letter-spacing:.35px}
+.cta-btn small{display:block;margin-top:.025in;font-size:.095in;line-height:1.05;font-weight:500;opacity:.86}
+.cta-price{color:#fff;background:linear-gradient(135deg,#e76a12,#b7430b);box-shadow:0 7px 16px rgba(183,67,11,.20);border:1px solid rgba(255,255,255,.38)}
+.cta-price .cta-icon{background:rgba(255,255,255,.20);border:1px solid rgba(255,255,255,.55)}
+.cta-enquire{color:var(--green-dark);background:linear-gradient(135deg,#fffdf7,#f2e8d3);box-shadow:0 7px 16px rgba(65,48,25,.10);border:1px solid rgba(199,149,56,.52)}
+.cta-enquire .cta-icon{color:#fff;background:#245a3b;box-shadow:0 2px 6px rgba(36,90,59,.20)}
+.menu-two{padding-bottom:.70in}
+.menu-three{padding-bottom:.70in}
+@media(max-width:850px){
+  .menu-cta{gap:1.5vw}
+  .cta-btn{padding:1vw 1.5vw}
+  .cta-btn strong{font-size:1.7vw}.cta-btn small{font-size:1.15vw}
+}
+
+/* ===== NOTES PAGE ===== */
+.notes-page{background:#f8f2e7;text-align:center}
+.notes-page:before{
+  content:"";position:absolute;inset:0;opacity:.5;
+  background:radial-gradient(circle at 20% 70%,rgba(36,90,59,.09),transparent 28%),radial-gradient(circle at 85% 20%,rgba(231,106,18,.12),transparent 25%)
+}
+.notes-top-curve{position:absolute;top:-1.7in;right:-1.2in;width:5.3in;height:3.6in;background:var(--green);border-radius:0 0 0 100%;z-index:0}
+.notes-logo{position:relative;z-index:2;width:1.72in;height:1.72in;object-fit:contain;margin-top:.22in;filter:drop-shadow(0 6px 7px rgba(0,0,0,.13))}
+.notice,.service,.or{position:relative;z-index:2}
+.notice{margin:.02in auto 0;width:6.6in;padding:.16in .22in;border:1px solid rgba(199,149,56,.45);border-radius:.16in;background:rgba(255,255,255,.76);box-shadow:0 9px 22px rgba(65,48,25,.08);font-size:.145in;line-height:1.35;font-weight:700}
+.notice strong{color:var(--green-dark);letter-spacing:1px}.notice span{color:var(--saffron-dark)}
+.service{margin:.28in auto 0;width:6.6in;text-align:left;padding:.18in .30in .20in;border-radius:.18in;background:#fffdf7;border:1px solid rgba(199,149,56,.34);box-shadow:0 8px 20px rgba(65,48,25,.07)}
+.service h3{margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-size:.24in;color:var(--green-dark);font-weight:700;text-align:center}
+.service h3 span{font-family:'DM Sans',Arial,sans-serif;font-size:.135in;color:var(--muted);font-weight:600}
+.service-lines{margin-top:.14in;display:grid;gap:.075in;text-align:center;font-size:.145in;line-height:1.25;font-weight:600;color:#443b31}
+.service-lines div:before{content:"✦";color:var(--saffron);margin-right:.07in;font-size:10px}
+.or{color:var(--saffron-dark);font-size:.16in;font-weight:800;letter-spacing:2px;margin:.13in 0 .02in}
+.leaf{margin-top:.08in}
+.bottom-orange{position:absolute;z-index:1;left:-1.2in;bottom:-2.2in;width:5.7in;height:3.7in;background:var(--saffron);border-radius:0 100% 0 0;transform:rotate(2deg);opacity:.94}
+
+@media screen and (max-width:850px){
+  .page{width:100vw;height:125vw;margin:0 auto 12px;box-shadow:none}
+  .cover-left h1{font-size:7vw}
+}
+@media print{
+  html,body{background:#fff}
+  .page{margin:0;box-shadow:none}
+}
+
+/* Complete menu PDF download */
+.complete-download{width:100%;box-sizing:border-box;padding:28px 34px;background:linear-gradient(135deg,#123d2a,#1d5138);color:#fff;border-top:3px solid #c79538;border-bottom:3px solid #c79538;}
+.complete-download-inner{max-width:980px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:24px;}
+.complete-kicker{font-size:11px;letter-spacing:2px;color:#e5c879;font-weight:800;margin-bottom:7px;}
+.complete-download h2{margin:0 0 7px;font-family:Georgia,serif;font-size:25px;}
+.complete-download p{margin:0;color:rgba(255,255,255,.82);font-size:13px;}
+.complete-download-btn{display:inline-flex;align-items:center;justify-content:center;min-width:245px;padding:14px 18px;border-radius:10px;background:#e76a12;color:#fff;text-decoration:none;font-weight:800;font-size:12px;letter-spacing:.3px;box-shadow:0 8px 20px rgba(0,0,0,.2);}
+.complete-download-btn:hover{transform:translateY(-2px);}
+.menu-cta{position:absolute;left:.18in;right:.18in;bottom:.13in;z-index:4;}
+.cta-whatsapp{width:100%;box-sizing:border-box;display:flex;align-items:center;gap:.1in;min-height:.52in;border-radius:.13in;padding:.07in .12in;text-decoration:none;color:#fff;background:linear-gradient(135deg,#245a3b,#123d2a);box-shadow:0 8px 18px rgba(18,61,42,.22);}
+.cta-whatsapp .cta-icon{width:.28in;height:.28in;border-radius:50%;background:#fff;color:#245a3b;display:flex;align-items:center;justify-content:center;flex:0 0 .28in;}
+.cta-whatsapp strong{display:block;font-size:.135in;}
+.cta-whatsapp small{display:block;margin-top:.025in;font-size:.085in;opacity:.88;}
+@media(max-width:700px){.complete-download-inner{flex-direction:column;align-items:stretch}.complete-download-btn{width:100%;box-sizing:border-box}.complete-download h2{font-size:21px;}}
+
+/* ===== FINAL CTA: ONE WHATSAPP BUTTON + DOWNLOAD ICON ===== */
+.menu-cta{position:absolute;left:.18in;right:.18in;bottom:.13in;z-index:8;display:flex;align-items:center;gap:.10in;}
+.cta-btn.cta-whatsapp{flex:1;min-height:.56in;display:flex;align-items:center;gap:.10in;padding:.075in .13in;box-sizing:border-box;border-radius:.14in;text-decoration:none;color:#fff;background:linear-gradient(135deg,#9a4b18,#6f2e0e);border:1px solid rgba(255,255,255,.35);box-shadow:0 9px 20px rgba(111,46,14,.25);transition:transform .18s ease,box-shadow .18s ease;}
+.cta-btn.cta-whatsapp:hover{transform:translateY(-2px);box-shadow:0 12px 24px rgba(111,46,14,.30)}
+.cta-whatsapp .cta-icon{width:.30in;height:.30in;flex:0 0 .30in;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#fff;color:#6f2e0e;font-size:.12in;}
+.cta-whatsapp strong{display:block;font-family:'DM Sans',Arial,sans-serif;font-size:.14in;line-height:1.05;letter-spacing:.25px}
+.cta-whatsapp small{display:block;margin-top:.025in;font-size:.082in;line-height:1.05;font-weight:500;opacity:.88}
+.complete-download-icon{width:.55in;height:.55in;flex:0 0 .55in;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;background:linear-gradient(135deg,#245a3b,#123d2a);color:#fff;border:2px solid rgba(199,149,56,.9);box-shadow:0 8px 18px rgba(18,61,42,.24);font-size:.24in;font-weight:900;line-height:1;transition:transform .18s ease,box-shadow .18s ease;}
+.complete-download-icon:hover{transform:translateY(-2px) scale(1.04);box-shadow:0 11px 22px rgba(18,61,42,.30)}
+@media(max-width:700px){.menu-cta{left:4vw;right:4vw;bottom:3vw}.cta-btn.cta-whatsapp{min-height:12vw;padding:1.5vw 2vw}.cta-whatsapp strong{font-size:3.2vw}.cta-whatsapp small{font-size:2.1vw}.complete-download-icon{width:12vw;height:12vw;flex-basis:12vw;font-size:5vw}}
+
+/* SOUTH & NORTH COVER OVERRIDES */
+.cover-food-badge{left:.40in;top:8.55in;bottom:auto;width:1.08in;height:1.08in;}
+.cover-photo img{object-position:right center;}
+.menu-content li{font-size:.165in;margin-bottom:.045in;padding-right:1.18in;}
+.menu-content li::after{right:1.18in;}
+.menu-content{top:1.88in;}
+.menu-content.menu-dense li{font-size:.148in;line-height:1.10;margin-bottom:.032in;}
+.menu-content.menu-dense li::after{right:1.18in;}
+.menu-content.menu-very-dense li{font-size:.136in;line-height:1.08;margin-bottom:.024in;}
+.menu-content.menu-very-dense li::after{right:1.18in;}
+/* Birthday cover refinements */
+.cover-photo img{object-position:center center}
+.cover-food-badge{left:3.55in;bottom:.16in}
+/* Final birthday cover placement */
+.cover-food-badge{left:.48in;bottom:.58in}
+/* Updated birthday artwork: show the complete uploaded image without cropping or zooming */
+.cover-photo{background:#f8f2e7;}
+.cover-photo img{object-fit:contain;object-position:center center;}
+
+/* Birthday cover: keep the supplied artwork complete, but present it in the same
+   clean framed/rounded cover-photo style used across the other Sri Vrinda's menus. */
+.cover-photo{
+  top:1.28in;
+  right:.34in;
+  width:42%;
+  height:4.95in;
+  overflow:hidden;
+  border-radius:.72in .72in .28in .28in;
+  background:#f8f2e7;
+  border:1px solid rgba(199,149,56,.28);
+  box-shadow:0 18px 35px rgba(53,38,19,.18);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.cover-photo:after{display:none;}
+.cover-photo img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center center;
+  display:block;
+  image-rendering:auto;
+}
+/* JAIN MENU FINAL OVERRIDES */
+.cover-photo{top:.22in;right:.22in;width:47%;height:95%;border-radius:1.2in 1.2in .35in .35in;overflow:hidden;background:#f8f2e7;}
+.cover-photo img{width:100%;height:100%;object-fit:cover;object-position:center center;display:block;}
+.cover-food-badge{left:.48in;bottom:.58in;}
+.menu-content{top:1.88in;}
+.menu-content.menu-dense li{font-size:.148in;line-height:1.10;margin-bottom:.032in;padding-right:1.18in;}
+.menu-content.menu-dense li::after{right:1.18in;}

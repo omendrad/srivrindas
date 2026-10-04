@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#245a3b">
+    <title>All North Indian Menus | Sri Vrinda's Catering</title>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --leaf: #245a3b;
+            --leaf-dark: #123d2a;
+            --saffron: #c95718;
+            --gold: #c79538;
+            --paper: #fbf8ef;
+            --ink: #28231e;
+        }
+
+        body {
+            margin: 0;
+            color: var(--ink);
+            background: var(--paper);
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .topbar {
+            padding: 16px max(24px, calc((100% - 1120px) / 2));
+            background: #fff;
+            border-bottom: 1px solid #e9e2d4;
+        }
+
+        .topbar a {
+            color: var(--leaf-dark);
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .hero {
+            position: relative;
+            display: flex;
+            min-height: 300px;
+            align-items: end;
+            overflow: hidden;
+            color: #fff;
+            background: var(--leaf-dark);
+        }
+
+        .hero img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 58%;
+        }
+
+        .hero::after {
+            position: absolute;
+            inset: 0;
+            content: '';
+            background: linear-gradient(90deg, rgba(10, 25, 20, .9), rgba(10, 25, 20, .62) 42%, rgba(10, 25, 20, .2));
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            width: min(1120px, 100%);
+            margin: 0 auto;
+            padding: 44px 24px 40px;
+            text-shadow: 0 4px 18px rgba(0, 0, 0, .72);
+        }
+
+        .hero-kicker {
+            margin-bottom: 8px;
+            color: #f1c878;
+            font-size: .78rem;
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+        }
+
+        h1, .menu-title {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-weight: 700;
+        }
+
+        .hero h1 {
+            max-width: 650px;
+            margin: 0;
+            color: #fff;
+            font-size: clamp(2.6rem, 7vw, 4.4rem);
+            line-height: .98;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, .8), 0 0 18px rgba(0, 0, 0, .45);
+        }
+
+        .hero p {
+            max-width: 520px;
+            margin: 14px 0 0;
+            color: #f4ecdf;
+            text-shadow: 0 3px 14px rgba(0, 0, 0, .7);
+        }
+
+        main {
+            width: min(1120px, 100%);
+            margin: 0 auto;
+            padding: 32px 24px 56px;
+        }
+
+        .menu-list {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .menu-link {
+            display: flex;
+            min-height: 76px;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 16px 20px;
+            color: var(--ink);
+            background: #fff;
+            border: 1px solid #e8e0d2;
+            border-left: 4px solid var(--leaf);
+            text-decoration: none;
+            transition: border-color .18s ease, transform .18s ease, box-shadow .18s ease;
+        }
+
+        .menu-link:hover, .menu-link:focus-visible {
+            color: var(--leaf-dark);
+            border-left-color: var(--saffron);
+            box-shadow: 0 8px 20px rgba(40, 35, 30, .08);
+            transform: translateY(-2px);
+        }
+
+        .menu-title {
+            margin: 0;
+            font-size: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .menu-arrow {
+            flex: 0 0 auto;
+            color: var(--saffron);
+            font-size: 1.4rem;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 24px;
+            color: var(--leaf-dark);
+            font-weight: 700;
+            text-decoration-color: var(--gold);
+            text-underline-offset: 4px;
+        }
+
+        @media (max-width: 640px) {
+            .hero { min-height: 260px; }
+            .hero-content { padding: 34px 20px; }
+            main { padding: 24px 20px 40px; }
+            .menu-list { grid-template-columns: 1fr; gap: 10px; }
+            .menu-link { min-height: 68px; padding: 14px 16px; }
+        }
+    </style>
+</head>
+<body>
+    <header class="topbar">
+        <a href="../../index.html">Sri Vrinda's Catering</a>
+    </header>
+
+    <section class="hero" aria-labelledby="page-title">
+        <img src="north%20indian%20menu/assets/north-indian-buffet.png" alt="North Indian buffet setup">
+        <div class="hero-content">
+            <div class="hero-kicker">Sri Vrinda's Catering</div>
+            <h1 id="page-title">All North Indian Menus</h1>
+            <p>Choose a menu collection to view its dishes and enquire about catering.</p>
+        </div>
+    </section>
+
+    <main>
+        <nav class="menu-list" aria-label="North Indian menu collections">
+            <a class="menu-link" href="north%20indian%20menu/index.html"><h2 class="menu-title">North Indian Menu</h2><span class="menu-arrow" aria-hidden="true">&rarr;</span></a>
+            <a class="menu-link" href="North%20thalis/index.html"><h2 class="menu-title">North Indian Thalis</h2><span class="menu-arrow" aria-hidden="true">&rarr;</span></a>
+            <a class="menu-link" href="birthday%20menu/index.html"><h2 class="menu-title">Birthday Menu</h2><span class="menu-arrow" aria-hidden="true">&rarr;</span></a>
+            <a class="menu-link" href="north%20and%20south/index.html"><h2 class="menu-title">North and South Menu</h2><span class="menu-arrow" aria-hidden="true">&rarr;</span></a>
+        </nav>
+        <a class="back-link" href="../../bulk-order.html">&larr; Back to Bulk Order Menu</a>
+    </main>
+    <script src="../../js/bulk-order-shell.js"></script>
+</body>
+</html>
